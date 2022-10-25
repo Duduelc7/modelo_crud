@@ -6,6 +6,7 @@ class Book(models.Model):
     title = models.CharField('título', max_length=100, unique=True)
     author = models.CharField('autor', max_length=100, null=True, blank=True)
     like = models.BooleanField(null=True)
+    teste = models.CharField(max_length=200)
 
     class Meta:
         ordering = ('title',)

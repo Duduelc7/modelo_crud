@@ -1,31 +1,37 @@
 <!-- book_result_hx.html -->
 <tr id="trBook{{ object.pk }}">
-  <td>
+
+  <!--
+    <td>
     <span
       hx-post="{% url 'bookstore:book_like' object.pk %}"
       hx-target="#trBook{{ object.pk }}"
       hx-swap="outerHTML"
     >
-      {% if object.like %}
-        <i class="fa fa-thumbs-up text-primary"></i>
-      {% else %}
-        <i class="fa fa-thumbs-o-up text-secondary"></i>
-      {% endif %}
-    </span>
-    <span
-      class="ml-2"
-      hx-post="{% url 'bookstore:book_unlike' object.pk %}"
-      hx-target="#trBook{{ object.pk }}"
-      hx-swap="outerHTML"
-    >
-      {% if not object.like %}
-        <i class="fa fa-thumbs-down text-danger"></i>
-      {% else %}
-        <i class="fa fa-thumbs-o-down text-secondary"></i>
-      {% endif %}
-    </span>
-  </td>
+     sistema de like 
+    {% if object.like %}
+    <i class="fa fa-thumbs-up text-primary"></i>
+  {% else %}
+    <i class="fa fa-thumbs-o-up text-secondary"></i>
+  {% endif %}
+</span>
+<span
+  class="ml-2"
+  hx-post="{% url 'bookstore:book_unlike' object.pk %}"
+  hx-target="#trBook{{ object.pk }}"
+  hx-swap="outerHTML"
+>
+ sistema de deslike 
+  {% if not object.like %}
+    <i class="fa fa-thumbs-down text-danger"></i>
+  {% else %}
+    <i class="fa fa-thumbs-o-down text-secondary"></i>
+  {% endif %}
+</span>
+</td>
+-->
   <td>
+    <!-- sistema de "expandir" -->
     <a
       href=""
       data-toggle="modal"
@@ -37,6 +43,8 @@
     >{{ object.title }}</a>
   </td>
   <td>{{ object.author|default:'---' }}</td>
+  <!-- sistema de update -->
+  
   <td>
     <span
       data-toggle="modal"
@@ -47,6 +55,8 @@
     >
       <i class="fa fa-edit link span-is-link"></i>
     </span>
+
+<!-- delete -->
     <span
       hx-delete="{% url 'bookstore:book_delete' object.pk %}"
       hx-confirm="Deseja mesmo deletar?"

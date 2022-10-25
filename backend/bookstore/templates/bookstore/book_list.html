@@ -22,14 +22,20 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Gostou?</th>
           <th>Título</th>
           <th>Autor</th>
+          <th>teste</th>
           <th>Ações</th>
         </tr>
       </thead>
       <tbody id="bookTbody">
-        {% include "./book_table.html" %}
+        <!-- book_table -->
+        {% for object in object_list %}
+        {% include "./hx/book_result_hx.html" %}
+        {% endfor %}
+      </tbody>
+      <tbody>
+        teste
       </tbody>
     </table>
   </div>
